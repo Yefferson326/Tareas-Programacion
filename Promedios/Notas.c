@@ -12,7 +12,7 @@ int main (){
     printf("Bienevenido \nEn este programa podra organizar las notas de sus estudiantes y conocer su promedio\n");
     
 
-    printf("ingrese las notas del estudiante\n ");
+    printf("ingrese las notas del estudiante\n");
     printf("1.");
     scanf("%f", & note_one);
     printf("2.");
