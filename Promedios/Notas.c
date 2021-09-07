@@ -1,21 +1,26 @@
 #include <stdio.h>
-void ShowTextInvalidNote (){
-    printf("Nota invalida\nPor favor ingrese la nota en el rango de 0 hasta 5.0");
+#include <stdlib.h>
+void ShowTextInvalidNote (char* numberNote){
+    printf("Nota invalida\nPor favor ingrese la nota %s en el rango de 0 hasta 5.0", numberNote);
     exit (0);
 }
 
-void validateRangeNote (float note){
+void validateRangeNote (float note, char* numberNote){
     if(note < 0 || note > 5.0){
-        ShowTextInvalidNote ();
+        ShowTextInvalidNote (numberNote);
     }
 }
-float printAndscandNote (char* numberNote){
+float scanNote (char* numberNote){
     float note;
-    printf("%s.", numberNote);
+    printNote(numberNote);
     scanf("%f", & note);
-    validateRangeNote(note);
+    validateRangeNote(note, numberNote);
     return note;
 }
+void printNote (char* numberNote){
+    printf("%s.", numberNote);
+}
+
 float calcPromedio (float noteOne, float noteTwo, float noteThree, float noteFour, float noteFive){
     return (noteOne+noteTwo+noteThree+noteFour+noteFive)/5;
 }
@@ -33,11 +38,11 @@ int main (){
 
     printf("Ingrese las notas del estudiante\n");
 
-    noteOne = printAndscandNote("1");
-    noteTwo = printAndscandNote("2");
-    noteThree = printAndscandNote("3");
-    noteFour = printAndscandNote("4");
-    noteFive = printAndscandNote("5");
+    noteOne = scanNote("1");
+    noteTwo = scanNote("2");
+    noteThree = scanNote("3");
+    noteFour = scanNote("4");
+    noteFive = scanNote("5");
 
     promedio = calcPromedio(noteOne,noteTwo,noteThree,noteFour,noteFive);
 
