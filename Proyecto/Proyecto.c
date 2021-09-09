@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 #include <conio.h>
 int dateAndTime (){
@@ -61,7 +62,7 @@ int main (){
     int numberOfoneProduct,numberOfTwoProduct,numberOfthreeProduct,numberOffourProduct,numberOffiveProduct,numberOfsixProduct,numberOfSevenProduct,numberOfEigthProduct;
     float oneProductValue,totalValueOneProduct,twoProductValue,totalValueTwoProduct,threeProductValue,totalValuethreeProduct,fourProductValue,totalValuefourProduct,fiveProductValue,totalValuefiveProduct,sixProductValue,totalValuesixProduct,sevenProductValue,totalValueSevenProduct,eigthProductValue,totalValueEigthProduct;
     float totalpurchase,totalDiscount;
-    char oneProductName[50],twoProductName[50],threeProductName[50],fourProductName[50],fiveProductName[50],sixProductName[50],sevenProductName[50],eigthProductName[50];
+    char oneProductName[20],twoProductName[50],threeProductName[50],fourProductName[50],fiveProductName[50],sixProductName[50],sevenProductName[50],eigthProductName[50];
     char newProduct,validTv;
     printf("**********BIENVENIDO**********\nEn este programa podras conocer el valor total de 8 productos y mirar tu descuento para el mes de Septiembre\n");
     printf("FACTURA\n");
@@ -72,7 +73,6 @@ int main (){
     if (validTv != 's'){
         printf("Escriba el nombre del producto: ");
         scanf("%s",&oneProductName);
-        fflush(stdin);
         oneProductValue = productValue(oneProductName);
         numberOfoneProduct = numberOfProducts();
         totalValueOneProduct = oneProductValue * numberOfoneProduct;
